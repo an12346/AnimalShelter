@@ -41,7 +41,15 @@ An C# application to keep track of animals at an animal shelter. Information suc
 * Add the name of your database and password to the appsettings.json file
 * To update the databse, run the command: `$ dotnet ef database update`
 * To download obj and bin files, run the command `$ dotnet restore` 
-* To open the application in a web browser, run the command: `$ dotnet run`
+* To start the server, run the command: `$ dotnet run`
+
+## Swagger
+
+* Swagger allows for interactive documentation for your API
+* Download Swagger
+* Start the server
+* After starting the server, go to http://localhost:your-port-number/swagger/ to view your API
+* Now, you can send different requests within this application
 
 ## Known Bugs
 
