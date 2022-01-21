@@ -2,7 +2,7 @@
 
 #### By: _*Anna Pittman*_
 
-#### _A C# web application that utilizes an API._
+#### _A C# application with CRUD functionality and an API._
 
 ## Technologies Used
 
@@ -16,24 +16,25 @@
 
 ## Description
 
-A website where users can add engineers and machines to a database, as well as display which engineers are lisenced to repair a particular machine. A many to many design is utilized to display the relationships between the engineers and machines. Users can delete, edit, and see the details for every engineer and machine added.
+An C# application to keep track of animals at an animal shelter. Information such as an animal's name, gender, age and breed can be returned using API calls. In addition, Swagger is utilized to organize API documentation. 
 
 ## Setup/Installation Requirements
 
 * Download [.NET5](https://dotnet.microsoft.com/en-us/download/dotnet/5.0)
 * Download MySQL and MySQL Workbench
+* Download [Swagger](https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-3.1&tabs=visual-studio-code)
 
 ## Application Setup
 
-* Clone this repository to your desktop using the command: `git clone https://github.com/an12346/factory.git`
-* Navigate to the project directory: `cd dr-sillystringz-factor`
-* Then, navigate to the production file: `cd Factory`
-* Create a file named "appsettings.json" in the `Factory` directory
+* Clone this repository to your desktop using the command: `git clone https://github.com/an12346/AnimalShelter.git`
+* Navigate to the project directory: `cd AnimalShelter.Solution`
+* Then, navigate to the production file: `cd AnimalShelter`
+* Create a file named "appsettings.json" in the `AnimalShelter` directory
 * Add the following code to appsettings.json:
 ```
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=best_restaurants_refactor;uid=[YOUR DATABASE];pwd=[YOUR PASSWORD];"
+    "DefaultConnection": "Server=localhost;Port=3306;database=animal_shelter;uid=[YOUR DATABASE];pwd=[YOUR PASSWORD];"
   }
 }
 ```
