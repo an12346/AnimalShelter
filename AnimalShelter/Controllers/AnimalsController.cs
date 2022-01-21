@@ -26,9 +26,9 @@ namespace AnimalShelter.Controllers
       var query = _db.Animals.AsQueryable();
 
       if (name != null)
-      {
-        query = query.Where(entry => entry.Name == name);
-      }
+        {
+          query = query.Where(entry => entry.Name == name);
+        }
 
       if (species != null)
         {
@@ -39,6 +39,16 @@ namespace AnimalShelter.Controllers
         {
           query = query.Where(entry => entry.Age == age);
         }
+
+      if (breed != null)
+        {
+          query = query.Where(entry => entry.Breed == breed);
+        }
+
+      if (gender != null)
+        {
+          query = query.Where(entry => entry.Gender == gender);
+        }   
 
       return await query.ToListAsync();
     }
