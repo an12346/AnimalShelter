@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using RestSharp;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Swashbuckle.AspNetCore;
 
 namespace AnimalShelter
 {
@@ -24,6 +25,7 @@ namespace AnimalShelter
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+
                 });
     }
 }
