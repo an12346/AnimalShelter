@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AnimalShelter.Models;
 
-namespace AnimalShelter.MapControllers
+namespace AnimalShelter.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
@@ -21,14 +21,24 @@ namespace AnimalShelter.MapControllers
     }
     
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Animal>>> Get (string Name)
+    public async Task<ActionResult<IEnumerable<Animal>>> Get (string name, string species, int age)
     {
       var query = _db.Animals.AsQueryable();
 
-      if (Name != null)
+      if (name != null)
       {
-        query = query.Where(entry => entry.Name == Name);
+        query = query.Where(entry => entry.Name == name);
       }
+
+      if (species != null)
+        {
+          query = query.Where(entry => entry.Species == species);
+        }
+
+      if (age != null)
+        {
+          query = query.Where(entry => entry.Age == age);
+        }
 
       return await query.ToListAsync();
     }
@@ -63,7 +73,7 @@ namespace AnimalShelter.MapControllers
       }
       catch (DbUpdateConcurrencyException)
       {
-        if (!GroupExists(id))
+        if (!AnimalExists(id))
         {
           return NotFound();
         }
